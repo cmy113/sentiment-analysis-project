@@ -166,20 +166,3 @@ blockquote:after {
 	content: '”';
 }
 
-/*To make the footer at the bottom of the page*/
-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.spacer {
-    flex: 1;
-}
-
-/* make it visible for the purposes of demo */
-.footer {
-    height: 50px;
-    background-color: red;
-}
