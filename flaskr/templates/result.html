@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="column">
+        <p style="text-align: center;font-weight: bold">Message</p>
+    </div>
+      <div class="column">
+          <p style="text-align: center;font-weight: bold">Sentiment</p>
+    </div>
+    <div class="column">
+        <p style="text-align: center;font-weight: bold">Score</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <blockquote>
+            {{message}}
+        </blockquote>
+    </div>
+    <div class="column">
+        <div class="badge {{sentiment}}">{{sentiment}}</div>
+    </div>
+    <div class="column">
+        <div class="badge">{{score}}</div>
+    </div>
+
+</div>
+{% endblock %}
