@@ -1,21 +1,19 @@
-import nltk
-# Please run below command to download the nltk data if you run locally!
-# Heroku will download automatically using nltk.txt
-# nltk.download('wordnet')
-from nltk.stem import WordNetLemmatizer
 import pickle
 import re
 import numpy as np
 import pandas as pd
-
 from flask import Flask
+# Please run the nltk.download command to download the nltk data if you run locally!
+# Heroku will download automatically using nltk.txt
+# nltk.download('wordnet')
+from nltk.stem import WordNetLemmatizer
 
 app = Flask(__name__)
 app.config.from_mapping(
-    SECRET_KEY='dev'
+    SECRET_KEY='\xe0\xcd\xac#\x06\xd9\xe4\x00\xa5\xf2\x88\xc3\xef$\xa5\x05n\x97\xd8\x1269i\xd3'
 )
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
+    redirect, render_template, request, session, url_for
 )
 
 with open('./flaskr/static/vectoriser.pickle', 'rb') as input_file:
