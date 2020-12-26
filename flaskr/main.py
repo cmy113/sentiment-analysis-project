@@ -1,5 +1,6 @@
 import nltk
-nltk.data.path.append('./flaskr/static/nltk_data')
+# Update the path of nltk data here so that it can download from the repository instead of online to save computational time
+# nltk.data.path.append('./flaskr/static/nltk_data')
 from nltk.stem import WordNetLemmatizer
 import pickle
 import re
