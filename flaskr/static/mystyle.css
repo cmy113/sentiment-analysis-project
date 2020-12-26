@@ -13,6 +13,18 @@ html {
 
 
 /*
+Table format
+A flex container expands items to fill available free space or shrinks them to prevent overflow in a row
+ */
+.row {
+    display: flex;
+}
+.column {
+    flex: 50%;
+}
+
+
+/*
 Align h1 to center and change its color
 */
 h1 {
@@ -34,6 +46,26 @@ Align h3 to center
 */
 h3 {
     text-align: center
+}
+
+
+/*
+Gif image property
+ */
+.image {
+    display: block;
+    max-width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*
+Ensure input message and submit button occupy 95% of the column
+ */
+input, button {
+    width: 95%;
 }
 
 
@@ -68,36 +100,6 @@ button {
 
 }
 
-/*
-Ensure input message and submit button occupy 95% of the column
- */
-input, button {
-    width: 95%;
-}
-
-/*
-Table format
-A flex container expands items to fill available free space or shrinks them to prevent overflow in a row
- */
-.row {
-    display: flex;
-}
-.column {
-    flex: 50%;
-}
-
-
-/*
-Gif image property
- */
-.image {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 /*
 Design for Message output
@@ -117,6 +119,7 @@ blockquote:before {
 blockquote:after {
 	content: '”';
 }
+
 
 /*
 Design for Sentiment and Score output

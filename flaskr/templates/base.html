@@ -1,6 +1,17 @@
 <!DOCTYPE html>
+<!--
+Link to mystyle.css in static folder for the project css property
+-->
 <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
-<link rel="shortcut icon" href="{{ url_for('static', filename='happy.ico') }}">
+
+<!--
+Website icon
+-->
+<link rel="shortcut icon" href="{{ url_for('static', filename='webicon.ico') }}">
+
+<!--
+Website title
+-->
 <head>
     <title>Sentiment Analysis</title>
 </head>
@@ -8,14 +19,14 @@
 <body>
 <div class="row">
     <div class="column">
-        <img src="{{ url_for('static', filename='happy.gif') }}" class="image">
+        <img src="{{ url_for('static', filename='postive.gif') }}" class="image">
     </div>
     <div class="column">
         <h1>Sentiment Analysis</h1>
         <h2>Positive or Negative</h2>
     </div>
     <div class="column">
-        <img src="{{ url_for('static', filename='sad.gif') }}" class="image">
+        <img src="{{ url_for('static', filename='negative.gif') }}" class="image">
     </div>
 </div>
 
