@@ -1,113 +1,95 @@
-/*Need this font for blockquote*/
+/* Import special font for Message output */
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
+
+/*
+Overall font, background color and padding
+*/
 html {
     font-family: "Palatino";
     background: #eee;
     padding: 1rem;
 }
 
+
+/*
+Align h1 to center and change its color
+*/
 h1 {
-    /*color: #6645de;*/
     color:#054ce6;
-    /*margin: 1rem 0;*/
     text-align: center;
 }
 
+
+/*
+Align h2 to center
+*/
 h2 {
-    color: #000000;
-    /*margin: 1rem 0;*/
     text-align: center;
 }
 
+
+/*
+Align h3 to center
+*/
 h3 {
     text-align: center
 }
 
-input[type=text] {
-    font-size: 16px;
-    /*display: inline-block;*/
-    /*width: 50%;*/
-    padding: 2% 3%;
 
-    /*margin: 5% 0;*/
+/*
+Input form format
+*/
+form {
+    text-align: center;
+}
+input[type=text] {
+    font-size: 1em;
+    text-align: left;
+    padding: 2% 3%;
     box-sizing: border-box;
     border: solid transparent;
-    /*border-radius: 3em;*/
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
     outline: none;
-    text-align: left;
-
-
 }
 
+
+/*
+Submit button format
+*/
 button {
     margin: auto;
-    /*display: block;*/
-    background-color: #FCCA03; /* Green */
+    font-size: 1em;
+    background-color: #FCCA03;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 1em 2em;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
-    /*border-radius: 4px;*/
+
 }
 
-
-/*table {*/
-/*    !*font-family: Arial, Helvetica, sans-serif;*!*/
-/*    border-collapse: collapse;*/
-/*    width: 80%;*/
-/*}*/
-
-/*table td, table th {*/
-/*    border: 1px solid #ddd;*/
-/*    padding: 8px;*/
-/*}*/
-
-/*table tr:nth-child(even) {*/
-/*    background-color: #f2f2f2;*/
-/*}*/
-
-/*table tr:hover {*/
-/*    background-color: #ddd;*/
-/*}*/
-
-/*table th {*/
-/*    padding-top: 12px;*/
-/*    padding-bottom: 12px;*/
-/*    text-align: center;*/
-/*    background-color: black;*/
-/*    color: white;*/
-/*}*/
-
-/*table tr {*/
-/*    text-align: center;*/
-/*}*/
-
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
+/*
+Ensure input message and submit button occupy 95% of the column
+ */
+input, button {
+    width: 95%;
 }
 
+/*
+Table format
+A flex container expands items to fill available free space or shrinks them to prevent overflow in a row
+ */
 .row {
     display: flex;
 }
-
 .column {
     flex: 50%;
 }
 
 
-input, button {
-    width: 95%;
-    /*margin: 2% 5%;*/
-}
-
-
+/*
+Gif image property
+ */
 .image {
     display: block;
     max-width: 50%;
@@ -117,35 +99,9 @@ input, button {
 }
 
 
-form {
-    text-align: center;
-}
-
-
-.badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*max-width: 50%;*/
-    height: 100px;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    /*background: #64ade8;*/
-    background: #054ce6;
-    color: white;
-    font-weight: 600;
-}
-
-.Negative {
-    background: #f51848;
-}
-
-.Positive {
-    background: #3cc73e;
-}
-
+/*
+Design for Message output
+*/
 blockquote {
     font-family: 'Special Elite';
 	font-weight: 100;
@@ -153,16 +109,35 @@ blockquote {
     /*color:#054ce6;*/
     text-align: center;
 	line-height: 1.4;
-	/*position: relative;*/
 	margin: 0 5%;
-	/*padding: .5rem;*/
 }
-
 blockquote:before {
 	content: '“';
 }
-
 blockquote:after {
 	content: '”';
+}
+
+/*
+Design for Sentiment and Score output
+*/
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    background: #054ce6;
+    color: white;
+    font-weight: 600;
+}
+.Positive {
+    background: #3cc73e; /* Set the background as green if negative sentiment */
+}
+.Negative {
+    background: #f51848; /* Set the background as red if negative sentiment */
 }
 
