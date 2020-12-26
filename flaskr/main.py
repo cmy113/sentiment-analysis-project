@@ -1,7 +1,6 @@
 import nltk
-# Update the path of nltk data here so that it can download from the repository instead of online to save computational time
-# nltk.data.path.append('./flaskr/static/nltk_data')
 # Please run below command to download the nltk data if you run locally!
+# Heroku will download automatically using nltk.txt
 # nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 import pickle
