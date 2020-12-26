@@ -1,29 +1,51 @@
+<!--
+Extend all the contents from base.html
+-->
 {% extends "base.html" %}
+
+<!--
+Define what should be inside the block content
+-->
 {% block content %}
 
-<div class="row">
-    <div class="column">
-        <p style="text-align: center;font-weight: bold">Message</p>
-    </div>
-      <div class="column">
-          <p style="text-align: center;font-weight: bold">Sentiment</p>
-    </div>
-    <div class="column">
-        <p style="text-align: center;font-weight: bold">Score</p>
-    </div>
-</div>
-<div class="row">
-    <div class="column">
-        <blockquote>
-            {{message}}
-        </blockquote>
-    </div>
-    <div class="column">
-        <div class="badge {{sentiment}}">{{sentiment}}</div>
-    </div>
-    <div class="column">
-        <div class="badge">{{score}}</div>
+    <!--
+    Result header
+    1. Create a row with 3 columns with Message, Sentiment, Score header
+    2. Use the outputHeader class which will center and bold the text
+    -->
+    <div class="row">
+        <div class="column">
+            <p class="outputHeader">Message</p>
+        </div>
+        <div class="column">
+            <p class="outputHeader">Sentiment</p>
+        </div>
+        <div class="column">
+            <p class="outputHeader">Score</p>
+        </div>
     </div>
 
-</div>
+    <!--
+    Result content
+    1. Create a row with 3 columns
+    2. 1st column will be the input message, will use customised blockquote to make it more unique
+    3. 2nd column will be the sentiment of the input message with badge class,
+    the sentiment is passed as a class of the div (combined with badge class),
+    positive and negative class are defined in css, Positive: Green color, Negative : Red color
+    4. 3rd column will be the score (probability) of the predicted sentiment
+    -->
+    <div class="row">
+        <div class="column">
+            <blockquote>
+                {{ message }}
+            </blockquote>
+        </div>
+        <div class="column">
+            <div class="badge {{ sentiment }}">{{ sentiment }}</div>
+        </div>
+        <div class="column">
+            <div class="badge">{{ score }}</div>
+        </div>
+
+    </div>
 {% endblock %}

@@ -19,6 +19,7 @@ A flex container expands items to fill available free space or shrinks them to p
 .row {
     display: flex;
 }
+
 .column {
     flex: 50%;
 }
@@ -28,7 +29,7 @@ A flex container expands items to fill available free space or shrinks them to p
 Align h1 to center and change its color
 */
 h1 {
-    color:#054ce6;
+    color: #054ce6;
     text-align: center;
 }
 
@@ -75,6 +76,7 @@ Input form format
 form {
     text-align: center;
 }
+
 input[type=text] {
     font-size: 1em;
     text-align: left;
@@ -102,27 +104,39 @@ button {
 
 
 /*
-Design for Message output
+Output header
 */
-blockquote {
-    font-family: 'Special Elite';
-	font-weight: 100;
-	font-size: 1.5rem;
-    /*color:#054ce6;*/
+.outputHeader{
     text-align: center;
-	line-height: 1.4;
-	margin: 0 5%;
-}
-blockquote:before {
-	content: '“';
-}
-blockquote:after {
-	content: '”';
+    font-weight: bold;
+    font-size: 1em;
 }
 
 
 /*
-Design for Sentiment and Score output
+Message output
+*/
+blockquote {
+    font-family: 'Special Elite';
+    font-weight: 100;
+    font-size: 1.5rem;
+    /*color:#054ce6;*/
+    text-align: center;
+    line-height: 1.4;
+    margin: 0 5%;
+}
+
+blockquote:before {
+    content: '“';
+}
+
+blockquote:after {
+    content: '”';
+}
+
+
+/*
+Sentiment and Score output
 */
 .badge {
     display: flex;
@@ -137,9 +151,11 @@ Design for Sentiment and Score output
     color: white;
     font-weight: 600;
 }
+
 .Positive {
     background: #3cc73e; /* Set the background as green if negative sentiment */
 }
+
 .Negative {
     background: #f51848; /* Set the background as red if negative sentiment */
 }

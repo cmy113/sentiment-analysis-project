@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-Link to mystyle.css in static folder for the project css property
+Project css
 -->
 <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
 
@@ -17,6 +17,11 @@ Website title
 </head>
 
 <body>
+<!--
+1. Split into 3 columns
+2. 1st and 3rd column will be the positive and negative gif
+3. 2nd column will be the headings
+-->
 <div class="row">
     <div class="column">
         <img src="{{ url_for('static', filename='postive.gif') }}" class="image">
@@ -30,9 +35,20 @@ Website title
     </div>
 </div>
 
+<!--
+Add a horizontal line in between
+-->
 <hr>
+
+<!--
+h3 to ask user to input message
+-->
 <h3>Input your message to get its sentiment</h3>
 
+<!--
+Create a form with text input and submit button
+Obtain the input message and pass it into the code
+-->
 <form method="post">
     <table width="100%">
         <tr>
@@ -45,10 +61,15 @@ Website title
 
 </form>
 
-
+<!--
+Add two line breaks between the input and output
+-->
 <br>
 <br>
 
+<!--
+Block content for the output, a result html will inherit this base html
+-->
 {% block content %}
 {% endblock %}
 </body>
