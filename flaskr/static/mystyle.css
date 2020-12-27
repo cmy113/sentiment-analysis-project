@@ -17,16 +17,15 @@ html {
 This is to make sure footer always at the bottom of the page
 The content will expand as needed and footer can be placed below the content
  */
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
+/*body {*/
+/*    display: flex;*/
+/*    min-height: 100vh;*/
+/*    flex-direction: column;*/
+/*}*/
 
 .content {
-    flex: 1;
+    min-height: calc(100vh - 120px);
 }
-
 
 /*
 Table format

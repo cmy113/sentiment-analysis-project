@@ -15,14 +15,14 @@ Website title
 <head>
     <title>Sentiment Analysis</title>
 </head>
-
-<body>
 <header>
     <a style="padding:0 0.5rem"href="mailto:chenming.yong13@gmail.com"><img src="{{ url_for('static', filename='email.png') }}"></a>
     <a style="padding:0 0.5rem" href="https://github.com/cmy113/sentiment-analysis-project" target="_blank"><img src="{{ url_for('static', filename='github.png') }}"></a>
     <a style="padding:0 0.5rem" href="https://www.linkedin.com/in/chenming-yong/" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}"></a>
 
 </header>
+<body>
+
 <div class="content">
 
 
@@ -84,23 +84,20 @@ Block content for the output, a result html will inherit this base html
 {% block content %}
 {% endblock %}
 </div>
-<br>
-<br>
-
-
+{#<br>#}
+{#<br>#}
 <footer >
     <hr>
-    <h4>Credits</h4>
+    <p style="font-size:0.75em">Credits</p>
     <ol>
-        <li>
+        <li style="font-size:0.5em">
             GIFs made by <a href="https://www.qoobee.com" target="_blank">QooBee</a> from <a href="https://www.qoobee.com" target="_blank">www.qoobee.com</a>
         </li>
-        <li>
+        <li style="font-size:0.5em">
             Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" target="_blank">Pixel perfect</a> from <a
                 href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a>
         </li>
     </ol>
 
 </footer>
-
 </body>
