@@ -59,7 +59,7 @@ Predict the sentiment of message, return a dataframe with columns : text, sentim
 3. Predict the sentiment using model
 4. Obtain the score(probability) of either positive/negative sentiment, round it to 3 decimal places
 5. (Beware that not all model has predict_proba method to obtain the score!)
-6. Convert the results into a dataframe and replace 0:Negative, 1:Positive so that UI can display the sentiment
+6. Convert the results into a dataframe and replace sentiment column with 0:Negative, 1:Positive
 '''
 def predict(vectoriser, model, text):
     textdata = vectoriser.transform([preprocess(text)])
@@ -68,5 +68,5 @@ def predict(vectoriser, model, text):
 
     data = [(text, sentiment, score)]
     df = pd.DataFrame(data, columns=['text', 'sentiment', 'score'])
-    df = df.replace([0, 1], ["Negative", "Positive"])
+    df['sentiment'] = df['sentiment'].replace([0,1],['Negative','Positive'])
     return df
