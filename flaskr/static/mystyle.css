@@ -20,7 +20,7 @@ html {
 This is to make sure footer always at the bottom of the page
  */
 body {
-    min-height:80%;
+    min-height:100%;
     position:relative;
     padding-bottom:var(--footer-height);
 }
