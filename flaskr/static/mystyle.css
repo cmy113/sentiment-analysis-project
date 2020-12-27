@@ -1,10 +1,6 @@
 /* Import special font for Message output */
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
-/* Define some variable */
-:root {
-    --footer-height: 20vh;
-}
 
 /*
 Overall font, background color and padding
@@ -18,16 +14,16 @@ html {
 
 /*
 This is to make sure footer always at the bottom of the page
+The content will expand as needed and footer can be placed below the content
  */
 body {
-    min-height:100%;
-    position:relative;
-    padding-bottom:var(--footer-height);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-.footer {
-    position: absolute;
-    left: 0 ; right: 0; bottom: 0;
-    height:var(--footer-height);
+
+.content {
+    flex: 1;
 }
 
 
