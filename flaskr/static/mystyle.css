@@ -1,6 +1,10 @@
 /* Import special font for Message output */
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
+/* Define some variable */
+:root {
+    --footer-height: 20vh;
+}
 
 /*
 Overall font, background color and padding
@@ -9,6 +13,21 @@ html {
     font-family: "Palatino";
     background: #eee;
     padding: 1rem;
+    height: 100%;
+}
+
+/*
+This is to make sure footer always at the bottom of the page
+ */
+body {
+    min-height:80%;
+    position:relative;
+    padding-bottom:var(--footer-height);
+}
+.footer {
+    position: absolute;
+    left: 0 ; right: 0; bottom: 0;
+    height:var(--footer-height);
 }
 
 
@@ -106,7 +125,7 @@ button {
 /*
 Output header
 */
-.outputHeader{
+.outputHeader {
     text-align: center;
     font-weight: bold;
     font-size: 1em;
@@ -159,4 +178,3 @@ Sentiment and Score output
 .Negative {
     background: #f51848; /* Set the background as red if negative sentiment */
 }
-
