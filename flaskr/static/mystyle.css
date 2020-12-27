@@ -1,12 +1,13 @@
-/* Import special font for Message output */
+/* Import special font */
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /*
 Overall font, background color and padding
 */
 html {
-    font-family: "Palatino";
+    /*font-family: "Helvetica";*/
+    font-family: 'Open Sans', sans-serif;
     background: #eee;
     padding: 1rem;
     height: 100%;
