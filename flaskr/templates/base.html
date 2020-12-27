@@ -1,104 +1,96 @@
 <!DOCTYPE html>
-<!--
-Project css
--->
+<!--Project css-->
 <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
 
-<!--
-Website icon
--->
-{#<link rel="shortcut icon" href="{{ url_for('static', filename='webicon.ico') }}">#}
+<!--Website icon-->
 <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='webicon.png') }}">
-<!--
-Website title
--->
+
+<!--Website title-->
 <head>
     <title>Sentiment Analysis</title>
 </head>
-<header>
-    <a style="padding:0 0.5rem"href="mailto:chenming.yong13@gmail.com"><img src="{{ url_for('static', filename='email.png') }}"></a>
-    <a style="padding:0 0.5rem" href="https://github.com/cmy113/sentiment-analysis-project" target="_blank"><img src="{{ url_for('static', filename='github.png') }}"></a>
-    <a style="padding:0 0.5rem" href="https://www.linkedin.com/in/chenming-yong/" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}"></a>
 
+<!--Website header with mail, github and linkedin link-->
+<header>
+    <a style="padding:0 0.5rem" href="mailto:chenming.yong13@gmail.com"><img
+            src="{{ url_for('static', filename='email.png') }}"></a>
+    <a style="padding:0 0.5rem" href="https://github.com/cmy113/sentiment-analysis-project" target="_blank"><img
+            src="{{ url_for('static', filename='github.png') }}"></a>
+    <a style="padding:0 0.5rem" href="https://www.linkedin.com/in/chenming-yong/" target="_blank"><img
+            src="{{ url_for('static', filename='linkedin.png') }}"></a>
 </header>
+
 <body>
 
+<!--Website content-->
 <div class="content">
 
-
-
-
-<!--
-1. Split into 3 columns
-2. 1st and 3rd column will be the positive and negative gif
-3. 2nd column will be the headings
--->
-<div class="row">
-    <div class="column">
-        <img src="{{ url_for('static', filename='postive.gif') }}" class="image">
+    <!--
+    1. Split into 3 columns
+    2. 1st and 3rd column will be the positive and negative gif
+    3. 2nd column will be the headings
+    -->
+    <div class="row">
+        <div class="column">
+            <img src="{{ url_for('static', filename='postive.gif') }}" class="image">
+        </div>
+        <div class="column">
+            <h1>Sentiment Analysis</h1>
+            <h2>Positive or Negative</h2>
+        </div>
+        <div class="column">
+            <img src="{{ url_for('static', filename='negative.gif') }}" class="image">
+        </div>
     </div>
-    <div class="column">
-        <h1>Sentiment Analysis</h1>
-        <h2>Positive or Negative</h2>
-    </div>
-    <div class="column">
-        <img src="{{ url_for('static', filename='negative.gif') }}" class="image">
-    </div>
+
+    <!--Add a horizontal line in between-->
+    <hr>
+
+    <!--h3 to ask user to input message-->
+    <h3>Input your message to get its sentiment</h3>
+
+    <!--
+    1. Create a form with text input and submit button
+    2. Obtain the input message and pass it into the code
+    -->
+    <form method="post">
+        <table width="100%">
+            <tr>
+                <td width="85%"><input type="text" name="message" id="message" required></td>
+                <td width="15%">
+                    <button>SUBMIT</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!--Add two line breaks between the input and output-->
+    <br>
+    <br>
+
+    <!--Block content for the output, a result html will inherit this base html-->
+    {% block content %}
+    {% endblock %}
+
+    <!--Add two line breaks between the output and footer-->
+    <br>
+    <br>
 </div>
 
-<!--
-Add a horizontal line in between
--->
-<hr>
-
-<!--
-h3 to ask user to input message
--->
-<h3>Input your message to get its sentiment</h3>
-
-<!--
-Create a form with text input and submit button
-Obtain the input message and pass it into the code
--->
-<form method="post">
-    <table width="100%">
-        <tr>
-            <td width="85%"><input type="text" name="message" id="message" required></td>
-            <td width="15%">
-                <button>SUBMIT</button>
-            </td>
-        </tr>
-    </table>
-
-</form>
-
-<!--
-Add two line breaks between the input and output
--->
-<br>
-<br>
-
-<!--
-Block content for the output, a result html will inherit this base html
--->
-{% block content %}
-{% endblock %}
-<br>
-<br>
-</div>
-
-<footer >
+<!--Website footer-->
+<footer>
     <hr>
     <p style="font-size:0.75em">Credits</p>
     <ol>
         <li style="font-size:0.5em">
-            GIFs made by <a href="https://www.qoobee.com" target="_blank">QooBee</a> from <a href="https://www.qoobee.com" target="_blank">www.qoobee.com</a>
+            GIFs made by <a href="https://www.qoobee.com" target="_blank">QooBee</a> from <a
+                href="https://www.qoobee.com" target="_blank">www.qoobee.com</a>
         </li>
         <li style="font-size:0.5em">
-            Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" target="_blank">Pixel perfect</a> from <a
+            Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" target="_blank">Pixel perfect</a>
+            from <a
                 href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a>
         </li>
     </ol>
-
 </footer>
 </body>

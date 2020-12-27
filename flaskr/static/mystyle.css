@@ -2,34 +2,27 @@
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-/*
-Overall font, background color and padding
-*/
+/* Overall font, background color and padding */
 html {
-    /*font-family: "Helvetica";*/
     font-family: 'Open Sans', sans-serif;
     background: #eee;
     padding: 1rem;
     height: 100%;
 }
 
-/*
-This is to make sure footer always at the bottom of the page
-The content will expand as needed and footer can be placed below the content
- */
-/*body {*/
-/*    display: flex;*/
-/*    min-height: 100vh;*/
-/*    flex-direction: column;*/
-/*}*/
 
+/*
+1. This is to make sure footer always at the bottom of the page
+2. The footer is set at a fixed height of 120px as we know that the height is fixed
+ */
 .content {
     min-height: calc(100vh - 120px);
 }
 
+
 /*
-Table format
-A flex container expands items to fill available free space or shrinks them to prevent overflow in a row
+1. Table format
+2. A flex container expands items to fill available free space or shrinks them to prevent overflow in a row
  */
 .row {
     display: flex;
@@ -40,34 +33,26 @@ A flex container expands items to fill available free space or shrinks them to p
 }
 
 
-/*
-Align h1 to center and change its color
-*/
+/* Align h1 to center and change its color */
 h1 {
     color: #054ce6;
     text-align: center;
 }
 
 
-/*
-Align h2 to center
-*/
+/* Align h2 to center */
 h2 {
     text-align: center;
 }
 
 
-/*
-Align h3 to center
-*/
+/* Align h3 to center */
 h3 {
     text-align: center
 }
 
 
-/*
-Gif image property
- */
+/* Gif image property */
 .image {
     display: block;
     max-width: 50%;
@@ -77,17 +62,13 @@ Gif image property
 }
 
 
-/*
-Ensure input message and submit button occupy 95% of the column
- */
+/* Ensure input message and submit button occupy 95% of the column */
 input, button {
     width: 95%;
 }
 
 
-/*
-Input form format
-*/
+/* Input form format */
 form {
     text-align: center;
 }
@@ -102,9 +83,7 @@ input[type=text] {
 }
 
 
-/*
-Submit button format
-*/
+/* Submit button format */
 button {
     margin: auto;
     font-size: 1em;
@@ -118,9 +97,7 @@ button {
 }
 
 
-/*
-Output header
-*/
+/* Output header */
 .outputHeader {
     text-align: center;
     font-weight: bold;
@@ -128,9 +105,7 @@ Output header
 }
 
 
-/*
-Message output
-*/
+/* Message output */
 blockquote {
     font-family: 'Special Elite';
     font-weight: 100;
@@ -150,9 +125,7 @@ blockquote:after {
 }
 
 
-/*
-Sentiment and Score output
-*/
+/* Sentiment and Score output */
 .badge {
     display: flex;
     align-items: center;
