@@ -1,13 +1,15 @@
 import re
 import numpy as np
 import pandas as pd
-# Please run the nltk.download command to download the nltk data if you run locally!
-# Heroku will download automatically using nltk.txt
+# Please uncomment the below command to download the nltk wordnet data if you run locally!
+# import nltk
 # nltk.download('wordnet')
+# Heroku will download automatically using nltk.txt
 from nltk.stem import WordNetLemmatizer
 
+
 '''
-Preprocess the message before converting it into a matrix of token occurences (vectorizing)
+Preprocess the message, return the preprocessed message
 1. Will do a sequence of text preprocessing
 2. List of stop words to be used, we can either hardcode the stopwords in the code or use stopwords from nltk, 
 remember to exclude words like 'not','nor' and etc as it will affect the meaning significantly! 
@@ -51,18 +53,20 @@ def preprocess(text):
 
 
 '''
-
+Predict the sentiment of message, return a dataframe with columns : text, sentiment and score
+1. Preprocess the message using above function 
+2. Vectorize the data using vectorizer model after pre-processing
+3. Predict the sentiment using model
+4. Obtain the score(probability) of either positive/negative sentiment, round it to 3 decimal places
+5. (Beware that not all model has predict_proba method to obtain the score!)
+6. Convert the results into a dataframe and replace 0:Negative, 1:Positive so that UI can display the sentiment
 '''
 def predict(vectoriser, model, text):
-    # Predict the sentiment
     textdata = vectoriser.transform([preprocess(text)])
     sentiment = model.predict(textdata)
-    score = round(np.amax(model.predict_proba(textdata)), 2)
+    score = round(np.amax(model.predict_proba(textdata)), 3)
 
-    # Make a list of text with sentiment.
     data = [(text, sentiment, score)]
-
-    # Convert the list into a Pandas DataFrame.
     df = pd.DataFrame(data, columns=['text', 'sentiment', 'score'])
     df = df.replace([0, 1], ["Negative", "Positive"])
     return df
