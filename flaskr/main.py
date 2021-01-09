@@ -4,9 +4,9 @@ from .model import predict # Import predict function from model.py
 
 
 '''
-Initiate a new flask app
+Initiate a new flaskr app
 1. Input some random secret key to be used by the application 
-2. Input some flask commands that would be used by the application
+2. Input some flaskr commands that would be used by the application
 '''
 app = Flask(__name__)
 app.config.from_mapping(
@@ -19,13 +19,11 @@ from flask import (
 
 '''
 Load the machine learning libraries 
-1. Hashing vectorizer is used to transform the data into a matrix of token occurrences after text preprocessing
-2. Logistic regression model is used to predict the sentiment on the newly computed matrix
+1. Logistic regression model is used to predict the sentiment on the newly computed matrix
 '''
-# Load the vectoriser and machine learning libraries
-with open('./flask/static/HashingVectorizer.pickle', 'rb') as input_file:
-    vectorizer = pickle.load(input_file)
-with open('./flask/static/LogisticRegression.pickle', 'rb') as input_file:
+
+# Load the machine learning model
+with open('./flaskr/static/LogisticRegression.pickle', 'rb') as input_file:
     model = pickle.load(input_file)
 
 
@@ -53,7 +51,7 @@ def index():
 Result Page
 1. It will take both GET and POST requests 
 2. For GET request, 'message' will be obtained from the session, remember the 'message' is from the Home page! 
-    a) Sentiment and its score(probability) will be predicted by passing in the vectorizer, model and message from the session
+    a) Sentiment and its score(probability) will be predicted by passing in the vectorizer (optional), model and message from the session
     b) The result page will then be rendered based on the message, sentiment and score computed by the predictions
 3. For POST request, input message will be obtained from the form in result.html 
     a) Session will then be cleared (to remove anything belonged to previous session) and 'message' will be passed into the session 
@@ -63,7 +61,7 @@ Result Page
 @app.route('/result', methods=('GET', 'POST'))
 def result():
     message = session.get('message')
-    df_pred = predict(vectorizer, model, message)
+    df_pred = predict(model=model, text=message)
     sentiment = df_pred.head(1)['sentiment'].values[0]
     score = df_pred.head(1)['score'].values[0]
     if request.method == 'POST':

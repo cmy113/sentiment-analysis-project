@@ -6,6 +6,7 @@ import pandas as pd
 # nltk.download('wordnet')
 # Heroku will download automatically using nltk.txt
 from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import HashingVectorizer
 
 
 '''
@@ -55,13 +56,13 @@ def preprocess(text):
 '''
 Predict the sentiment of message, return a dataframe with columns : text, sentiment and score
 1. Preprocess the message using above function 
-2. Vectorize the data using vectorizer model after pre-processing
+2. Vectorize the data using vectorizer model
 3. Predict the sentiment using model
 4. Obtain the score(probability) of either positive/negative sentiment, round it to 3 decimal places
 5. (Beware that not all model has predict_proba method to obtain the score!)
 6. Convert the results into a dataframe and replace sentiment column with 0:Negative, 1:Positive
 '''
-def predict(vectoriser, model, text):
+def predict(model, text, vectoriser=HashingVectorizer(ngram_range=(1,2))):
     textdata = vectoriser.transform([preprocess(text)])
     sentiment = model.predict(textdata)
     score = round(np.amax(model.predict_proba(textdata)), 3)
