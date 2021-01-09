@@ -23,9 +23,9 @@ Load the machine learning libraries
 2. Logistic regression model is used to predict the sentiment on the newly computed matrix
 '''
 # Load the vectoriser and machine learning libraries
-with open('./flaskr/static/HashingVectorizer.pickle', 'rb') as input_file:
+with open('./flask/static/HashingVectorizer.pickle', 'rb') as input_file:
     vectorizer = pickle.load(input_file)
-with open('./flaskr/static/LogisticRegression.pickle', 'rb') as input_file:
+with open('./flask/static/LogisticRegression.pickle', 'rb') as input_file:
     model = pickle.load(input_file)
 
 
