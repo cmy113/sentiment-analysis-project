@@ -4,7 +4,7 @@ import pandas as pd
 # Please uncomment the below command to download the nltk wordnet data if you run locally!
 # import nltk
 # nltk.download('wordnet')
-# Heroku will download automatically using nltk.txt
+# Heroku will download the wordnet vocabulary automatically using nltk.txt
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import HashingVectorizer
 
